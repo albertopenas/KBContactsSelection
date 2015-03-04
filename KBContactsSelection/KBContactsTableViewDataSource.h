@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "KBContactsSelectionConfiguration.h"
+#import "OnItemClickDelegate.h"
 
 @interface KBContactsTableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) id<OnItemClickDelegate> onItemClickDelegate;
 
 - (instancetype)initWithTableView:(UITableView*)tableView configuration:(KBContactsSelectionConfiguration*)configuration;
 
@@ -19,5 +22,6 @@
 - (NSArray*)selectedContacts;
 - (NSArray*)phonesOfSelectedContacts;
 - (NSArray*)emailsOfSelectedContacts;
+-(void)selectAllContacts;
 
 @end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14BD40621AA7140400BE0A53 /* icon-no-photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BD405E1AA7140400BE0A53 /* icon-no-photo.png */; };
+		14BD40631AA7140400BE0A53 /* icon-no-photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BD405F1AA7140400BE0A53 /* icon-no-photo@2x.png */; };
+		14BD40641AA7140400BE0A53 /* icon-no-photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BD40601AA7140400BE0A53 /* icon-no-photo@3x.png */; };
+		14BD40651AA7140400BE0A53 /* privacy_tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BD40611AA7140400BE0A53 /* privacy_tick.png */; };
+		14BD40721AA7176D00BE0A53 /* DGCircularImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD40711AA7176D00BE0A53 /* DGCircularImageView.m */; };
+		14BD40751AA719D000BE0A53 /* UIView+AddRoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD40741AA719D000BE0A53 /* UIView+AddRoundedCorners.m */; };
 		75C4CF7E4C611113F6AF743F /* libPods-KBContactsSelectionExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7BCC02A23C2CA0F417AE24 /* libPods-KBContactsSelectionExample.a */; };
 		8E89D5D71A3CA8B6001CE6D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E89D5D61A3CA8B6001CE6D7 /* main.m */; };
 		8E89D5DA1A3CA8B6001CE6D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E89D5D91A3CA8B6001CE6D7 /* AppDelegate.m */; };
@@ -37,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14BD405C1AA700CB00BE0A53 /* OnItemClickDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnItemClickDelegate.h; path = protocol/OnItemClickDelegate.h; sourceTree = "<group>"; };
+		14BD405E1AA7140400BE0A53 /* icon-no-photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-no-photo.png"; path = "KBContactsSelection/resources/icon-no-photo.png"; sourceTree = "<group>"; };
+		14BD405F1AA7140400BE0A53 /* icon-no-photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-no-photo@2x.png"; path = "KBContactsSelection/resources/icon-no-photo@2x.png"; sourceTree = "<group>"; };
+		14BD40601AA7140400BE0A53 /* icon-no-photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-no-photo@3x.png"; path = "KBContactsSelection/resources/icon-no-photo@3x.png"; sourceTree = "<group>"; };
+		14BD40611AA7140400BE0A53 /* privacy_tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = privacy_tick.png; path = KBContactsSelection/resources/privacy_tick.png; sourceTree = "<group>"; };
+		14BD40701AA7176D00BE0A53 /* DGCircularImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGCircularImageView.h; path = category/DGCircularImageView.h; sourceTree = "<group>"; };
+		14BD40711AA7176D00BE0A53 /* DGCircularImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGCircularImageView.m; path = category/DGCircularImageView.m; sourceTree = "<group>"; };
+		14BD40731AA719D000BE0A53 /* UIView+AddRoundedCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AddRoundedCorners.h"; path = "category/UIView+AddRoundedCorners.h"; sourceTree = "<group>"; };
+		14BD40741AA719D000BE0A53 /* UIView+AddRoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AddRoundedCorners.m"; path = "category/UIView+AddRoundedCorners.m"; sourceTree = "<group>"; };
 		14EA2B521A8E5A28006F44E6 /* OnContactsSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnContactsSelectedDelegate.h; path = protocol/OnContactsSelectedDelegate.h; sourceTree = "<group>"; };
 		1F7BCC02A23C2CA0F417AE24 /* libPods-KBContactsSelectionExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KBContactsSelectionExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E89D5D11A3CA8B6001CE6D7 /* KBContactsSelectionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBContactsSelectionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,10 +106,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14BD405D1AA7108400BE0A53 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				14BD405E1AA7140400BE0A53 /* icon-no-photo.png */,
+				14BD405F1AA7140400BE0A53 /* icon-no-photo@2x.png */,
+				14BD40601AA7140400BE0A53 /* icon-no-photo@3x.png */,
+				14BD40611AA7140400BE0A53 /* privacy_tick.png */,
+			);
+			name = resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		14BD40661AA715FF00BE0A53 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				14BD40731AA719D000BE0A53 /* UIView+AddRoundedCorners.h */,
+				14BD40741AA719D000BE0A53 /* UIView+AddRoundedCorners.m */,
+				14BD40701AA7176D00BE0A53 /* DGCircularImageView.h */,
+				14BD40711AA7176D00BE0A53 /* DGCircularImageView.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
 		14EA2B531A8E5A2F006F44E6 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
 				14EA2B521A8E5A28006F44E6 /* OnContactsSelectedDelegate.h */,
+				14BD405C1AA700CB00BE0A53 /* OnItemClickDelegate.h */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -182,6 +221,8 @@
 		8E89D5FA1A3CA8CA001CE6D7 /* KBContactsSelection */ = {
 			isa = PBXGroup;
 			children = (
+				14BD40661AA715FF00BE0A53 /* category */,
+				14BD405D1AA7108400BE0A53 /* resources */,
 				14EA2B531A8E5A2F006F44E6 /* protocol */,
 				8E89D5FB1A3CA94B001CE6D7 /* KBContactsSelectionViewController.h */,
 				8E89D5FC1A3CA94B001CE6D7 /* KBContactsSelectionViewController.m */,
@@ -283,8 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14BD40651AA7140400BE0A53 /* privacy_tick.png in Resources */,
+				14BD40621AA7140400BE0A53 /* icon-no-photo.png in Resources */,
 				8E89D5E01A3CA8B6001CE6D7 /* Main.storyboard in Resources */,
 				8E89D5E51A3CA8B6001CE6D7 /* LaunchScreen.xib in Resources */,
+				14BD40631AA7140400BE0A53 /* icon-no-photo@2x.png in Resources */,
+				14BD40641AA7140400BE0A53 /* icon-no-photo@3x.png in Resources */,
 				8E89D5E21A3CA8B6001CE6D7 /* Images.xcassets in Resources */,
 				8E89D6041A3CAA75001CE6D7 /* KBContactCell.xib in Resources */,
 				8E89D5FF1A3CA94B001CE6D7 /* KBContactsSelectionViewController.xib in Resources */,
@@ -342,6 +387,8 @@
 				8E89D5DD1A3CA8B6001CE6D7 /* ViewController.m in Sources */,
 				8E89D5DA1A3CA8B6001CE6D7 /* AppDelegate.m in Sources */,
 				8EA2FD7B1A407C4B00332755 /* KBContactsSelectionConfiguration.m in Sources */,
+				14BD40751AA719D000BE0A53 /* UIView+AddRoundedCorners.m in Sources */,
+				14BD40721AA7176D00BE0A53 /* DGCircularImageView.m in Sources */,
 				8E89D6101A3CB5F6001CE6D7 /* APContact+FullName.m in Sources */,
 				8E89D5D71A3CA8B6001CE6D7 /* main.m in Sources */,
 				8E89D5FE1A3CA94B001CE6D7 /* KBContactsSelectionViewController.m in Sources */,
@@ -472,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KBContactsSelectionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -483,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KBContactsSelectionExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

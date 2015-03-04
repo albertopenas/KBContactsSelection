@@ -10,7 +10,9 @@
 #import "KBContactsSelectionConfiguration.h"
 #import "OnContactsSelectedDelegate.h"
 
-@interface KBContactsSelectionViewController : UIViewController
+@interface KBContactsSelectionViewController : UIViewController{
+    UIBarButtonItem *rightBarButtonItem;
+}
 
 @property (weak) id <OnContactsSelectedDelegate> contactsDelegate;
 

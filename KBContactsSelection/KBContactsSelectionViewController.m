@@ -9,8 +9,9 @@
 #import <MessageUI/MessageUI.h>
 #import "KBContactsSelectionViewController.h"
 #import "KBContactsTableViewDataSource.h"
+#import "OnItemClickDelegate.h"
 
-@interface KBContactsSelectionViewController () <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
+@interface KBContactsSelectionViewController () <MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate, OnItemClickDelegate>
 
 @property (nonatomic, strong) KBContactsTableViewDataSource *kBContactsTableViewDataSource;
 @property (nonatomic, strong) KBContactsSelectionConfiguration *configuration;
@@ -45,6 +46,7 @@
 - (void)prepareContactsDataSource
 {
     _kBContactsTableViewDataSource = [[KBContactsTableViewDataSource alloc] initWithTableView:_tableView configuration:_configuration];
+    [_kBContactsTableViewDataSource setOnItemClickDelegate:self];
     _tableView.dataSource = _kBContactsTableViewDataSource;
     _tableView.delegate = _kBContactsTableViewDataSource;
 }
@@ -56,9 +58,12 @@
         _navigationBarSearchContacts.hidden = YES;
         self.edgesForExtendedLayout = UIRectEdgeNone;
         
-        UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select", nil) style:UIBarButtonItemStylePlain target:self action:@selector(buttonSelectPushed:)];
-        [self.navigationItem setRightBarButtonItem:bi animated:YES];
-        
+        rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Select all", nil)
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self
+                                                             action:@selector(buttonSelectPushed:)];
+        rightBarButtonItem.tag = 1;
+        [self.navigationItem setRightBarButtonItem:rightBarButtonItem animated:YES];
         self.title = NSLocalizedString(@"Search contacts", nil);
     }
 }
@@ -95,10 +100,18 @@
 }
 
 - (IBAction)buttonSelectPushed:(id)sender {
-    if (_configuration.mode == KBContactsSelectionModeMessages) {
-        [self showMessagesViewControllerWithSelectedContacts];
-    } else {
-        [self showEmailViewControllerWithSelectedContacts];
+#ifndef NDEBUG
+    NSLog(@"[%@] %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+#endif
+    
+    if (rightBarButtonItem.tag == 0) {
+        if (_configuration.mode == KBContactsSelectionModeMessages) {
+            [self showMessagesViewControllerWithSelectedContacts];
+        } else {
+            [self showEmailViewControllerWithSelectedContacts];
+        }
+    }else if(rightBarButtonItem.tag == 1){
+        [_kBContactsTableViewDataSource selectAllContacts];
     }
 }
 
@@ -155,6 +168,21 @@
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark onItemClickDelegate
+-(void)numberOfItemsSelected:(int)num{
+#ifndef NDEBUG
+    NSLog(@"[%@] %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+#endif
+    
+    if (num == 0) {
+        [rightBarButtonItem setTitle:NSLocalizedString(@"Select all", nil)];
+        [rightBarButtonItem setTag:1];
+    }else{
+        [rightBarButtonItem setTitle:NSLocalizedString(@"Send", nil)];
+        [rightBarButtonItem setTag:0];
+    }
 }
 
 @end

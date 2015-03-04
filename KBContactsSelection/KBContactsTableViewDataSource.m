@@ -12,6 +12,7 @@
 #import "APContact+FullName.h"
 #import "APPhoneWithLabel.h"
 
+
 @interface KBContactsTableViewDataSource()
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -58,7 +59,7 @@ static NSString *cellIdentifier = @"KBContactCell";
 - (void)loadContacts
 {
     APAddressBook *ab = [[APAddressBook alloc] init];
-    ab.fieldsMask = APContactFieldFirstName | APContactFieldLastName | APContactFieldPhonesWithLabels | APContactFieldEmails | APContactFieldRecordID;
+    ab.fieldsMask = APContactFieldFirstName | APContactFieldLastName | APContactFieldPhonesWithLabels | APContactFieldEmails | APContactFieldRecordID | APContactFieldPhoto | APContactFieldThumbnail;
     ab.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]];
     
     if (_configuration.mode == KBContactsSelectionModeMessages) {
@@ -239,14 +240,18 @@ static NSString *cellIdentifier = @"KBContactCell";
     if (contact) {
         cell.labelName.text = [contact fullName];
         
+        if (contact.thumbnail) {
+            [cell.photoImageView setImage:contact.thumbnail];
+        }
+        
         if (_configuration.mode == KBContactsSelectionModeMessages) {
             APPhoneWithLabel *phoneWithLabel = contact.phonesWithLabels[0];
             if (phoneWithLabel) {
-                cell.labelPhone.text = phoneWithLabel.phone;
+                //cell.labelPhone.text = phoneWithLabel.phone;
                 cell.labelPhoneType.text = phoneWithLabel.label;
             }
         } else {
-            cell.labelPhone.text = contact.emails[0];
+            //cell.labelPhone.text = contact.emails[0];
             cell.labelPhoneType.text = @"";
         }
         
@@ -268,6 +273,9 @@ static NSString *cellIdentifier = @"KBContactCell";
 }
 
 #pragma mark - UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44.0f;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -282,6 +290,10 @@ static NSString *cellIdentifier = @"KBContactCell";
         } else {
             [_selectedContactsRecordIds addObject:contact.recordID];
         }
+    }
+    
+    if (_onItemClickDelegate) {
+        [_onItemClickDelegate numberOfItemsSelected:_selectedContactsRecordIds.count];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -310,6 +322,32 @@ static NSString *cellIdentifier = @"KBContactCell";
         }
     }
     return nil;
+}
+
+-(void)selectAllContacts{
+#ifndef NDEBUG
+    NSLog(@"[%@] %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+#endif
+    if (!_tableView) {
+        NSLog(@"tableview is null");
+        return;
+    }
+    
+    for(int i=0;i<[_tableView numberOfSections];i++){
+        for(int j=0;j<[_tableView numberOfRowsInSection:i];j++){
+            NSIndexPath* indexPath = [NSIndexPath indexPathForRow:j inSection:i];
+            APContact *contact = [self contactAtIndexPath:indexPath];
+            if (contact) {
+                [_selectedContactsRecordIds addObject:contact.recordID];
+            }
+        }
+    }
+
+    if (_onItemClickDelegate) {
+        [_onItemClickDelegate numberOfItemsSelected:_selectedContactsRecordIds.count];
+    }
+    
+    [_tableView reloadData];
 }
 
 @end
