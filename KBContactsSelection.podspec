@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KBContactsSelection"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Standalone UI component to search and select contacts."
 
   s.description  = <<-DESC
