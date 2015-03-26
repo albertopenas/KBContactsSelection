@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -35,7 +35,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-no-photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-E4-mcX" customClass="DGCircularImageView">
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-no-photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Zu-E4-mcX" customClass="DGCircularImageView">
                         <rect key="frame" x="38" y="4" width="38" height="38"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="38" id="k4I-Jc-Pbq"/>
@@ -43,7 +43,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6u-Pk-kwx">
-                        <rect key="frame" x="84" y="12" width="436" height="21"/>
+                        <rect key="frame" x="38" y="12" width="482" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="rgC-Co-HfD"/>
                         </constraints>
@@ -58,6 +58,7 @@
                     <constraint firstItem="x6u-Pk-kwx" firstAttribute="leading" secondItem="91I-4d-Ojx" secondAttribute="trailing" constant="8" id="420-Z2-zqK"/>
                     <constraint firstAttribute="centerY" secondItem="91I-4d-Ojx" secondAttribute="centerY" constant="-2" id="AjK-Re-tV6"/>
                     <constraint firstItem="2Zu-E4-mcX" firstAttribute="top" secondItem="Idi-m3-XIQ" secondAttribute="topMargin" constant="-1" id="D3D-N2-wR3"/>
+                    <constraint firstItem="x6u-Pk-kwx" firstAttribute="leading" secondItem="91I-4d-Ojx" secondAttribute="trailing" constant="10" id="HKw-dJ-ZmK"/>
                     <constraint firstItem="x6u-Pk-kwx" firstAttribute="top" secondItem="Idi-m3-XIQ" secondAttribute="top" constant="6" id="IHI-TW-Drz"/>
                     <constraint firstAttribute="centerY" secondItem="jec-7Y-In2" secondAttribute="centerY" constant="-1.5" id="M1T-wS-nSV"/>
                     <constraint firstItem="91I-4d-Ojx" firstAttribute="leading" secondItem="Idi-m3-XIQ" secondAttribute="leading" constant="8" id="QAj-Vp-p6c"/>
@@ -79,6 +80,7 @@
                         <exclude reference="420-Z2-zqK"/>
                         <exclude reference="IHI-TW-Drz"/>
                         <exclude reference="TV1-bQ-9g9"/>
+                        <exclude reference="tim-Rd-AVa"/>
                         <exclude reference="wbY-zA-M8I"/>
                         <exclude reference="WXg-8K-W6h"/>
                     </mask>
