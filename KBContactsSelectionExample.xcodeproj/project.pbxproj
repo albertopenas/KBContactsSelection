@@ -13,6 +13,7 @@
 		14BD40651AA7140400BE0A53 /* privacy_tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 14BD40611AA7140400BE0A53 /* privacy_tick.png */; };
 		14BD40721AA7176D00BE0A53 /* DGCircularImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD40711AA7176D00BE0A53 /* DGCircularImageView.m */; };
 		14BD40751AA719D000BE0A53 /* UIView+AddRoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BD40741AA719D000BE0A53 /* UIView+AddRoundedCorners.m */; };
+		5DF9D67672E875CB16086765 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BAD5D96538B68CA78A054A /* libPods.a */; };
 		75C4CF7E4C611113F6AF743F /* libPods-KBContactsSelectionExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7BCC02A23C2CA0F417AE24 /* libPods-KBContactsSelectionExample.a */; };
 		8E89D5D71A3CA8B6001CE6D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E89D5D61A3CA8B6001CE6D7 /* main.m */; };
 		8E89D5DA1A3CA8B6001CE6D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E89D5D91A3CA8B6001CE6D7 /* AppDelegate.m */; };
@@ -54,6 +55,7 @@
 		14BD40741AA719D000BE0A53 /* UIView+AddRoundedCorners.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AddRoundedCorners.m"; path = "category/UIView+AddRoundedCorners.m"; sourceTree = "<group>"; };
 		14EA2B521A8E5A28006F44E6 /* OnContactsSelectedDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OnContactsSelectedDelegate.h; path = protocol/OnContactsSelectedDelegate.h; sourceTree = "<group>"; };
 		1F7BCC02A23C2CA0F417AE24 /* libPods-KBContactsSelectionExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KBContactsSelectionExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56BAD5D96538B68CA78A054A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E89D5D11A3CA8B6001CE6D7 /* KBContactsSelectionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBContactsSelectionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E89D5D51A3CA8B6001CE6D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E89D5D61A3CA8B6001CE6D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			files = (
 				8EA2FD7D1A408A8000332755 /* MessageUI.framework in Frameworks */,
 				75C4CF7E4C611113F6AF743F /* libPods-KBContactsSelectionExample.a in Frameworks */,
+				5DF9D67672E875CB16086765 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +155,7 @@
 			children = (
 				8EA2FD7C1A408A8000332755 /* MessageUI.framework */,
 				1F7BCC02A23C2CA0F417AE24 /* libPods-KBContactsSelectionExample.a */,
+				56BAD5D96538B68CA78A054A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,7 +363,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KBContactsSelectionExample/Pods-KBContactsSelectionExample-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		39F80C56EA2581B8040C3231 /* Check Pods Manifest.lock */ = {
@@ -389,7 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KBContactsSelectionExample/Pods-KBContactsSelectionExample-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
