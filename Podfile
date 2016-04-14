@@ -3,7 +3,7 @@
 
 target 'KBContactsSelectionExample' do
 
-pod 'APAddressBook'
+pod 'APAddressBook', '~>0.1' 
 
 end
 
